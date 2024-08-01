@@ -51,3 +51,19 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+.name {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    animation: slide-in 2s ease-in-out;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
