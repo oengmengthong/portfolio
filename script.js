@@ -91,6 +91,63 @@ function updateLanguageSwitcher(language) {
   }
 }
 
+
+// Function to calculate years of experience
+function calculateExperience(startYear) {
+  const currentYear = new Date().getFullYear();
+  return currentYear - startYear;
+}
+
+// Example usage: set experience years to the span in the "About" section
+const experienceYears = calculateExperience(2019); // Replace with your actual start year
+document.getElementById("experience-years").textContent = experienceYears;
+
+
+// Header
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenu.classList.toggle('show');
+});
+
+document.querySelectorAll('#language-options li, #mobile-language-options li').forEach(item => {
+  item.addEventListener('click', function() {
+    const language = this.dataset.lang;
+    changeLanguage(language);
+    updateLanguageSwitcher(language);
+  });
+});
+
+function updateLanguageSwitcher(language) {
+  const switcher = document.getElementById('language-switcher');
+  const mobileSwitcher = document.getElementById('mobile-language-switcher');
+  const flag = switcher.querySelector('img');
+  const mobileFlag = mobileSwitcher.querySelector('img');
+  const text = switcher.querySelector('span');
+  const mobileText = mobileSwitcher.querySelector('span');
+
+  switch (language) {
+    case 'en':
+      flag.src = 'assets/english.png';
+      mobileFlag.src = 'assets/english.png';
+      text.textContent = 'English';
+      mobileText.textContent = 'English';
+      break;
+    case 'km':
+      flag.src = 'assets/khmer.png';
+      mobileFlag.src = 'assets/khmer.png';
+      text.textContent = 'Khmer';
+      mobileText.textContent = 'Khmer';
+      break;
+    case 'zh':
+      flag.src = 'assets/chinese.png';
+      mobileFlag.src = 'assets/chinese.png';
+      text.textContent = 'Chinese';
+      mobileText.textContent = 'Chinese';
+      break;
+  }
+}
+
 function changeLanguage(language) {
   // Load the language file or change the text content dynamically
   // For simplicity, we'll just change the text content here
@@ -130,14 +187,3 @@ const translations = {
 // Initialize the language based on the default value
 updateLanguageSwitcher('en');
 changeLanguage('en');
-
-
-// Function to calculate years of experience
-function calculateExperience(startYear) {
-  const currentYear = new Date().getFullYear();
-  return currentYear - startYear;
-}
-
-// Example usage: set experience years to the span in the "About" section
-const experienceYears = calculateExperience(2019); // Replace with your actual start year
-document.getElementById("experience-years").textContent = experienceYears;

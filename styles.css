@@ -48,7 +48,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    background-color: rgba(50, 118, 236, 0.3); /* Adjust opacity as needed */
     z-index: -1;
   }
 
@@ -149,10 +149,7 @@
     /* Light blue background on hover */
   }
 
-  /* Language Switcher */
-  #language-switcher {
-    cursor: pointer;
-  }
+
 
   #language-options {
     display: none;
@@ -172,34 +169,35 @@
   }
 
 
-  #floating-cat {
-    position: fixed;
-    bottom: 20px; /* Adjust this value to control how far the cat is from the bottom */
-    left: 0; /* Start at the left edge of the screen */
-    width: 150px; /* Set the size of the cat */
-    z-index: 1000; /* Make sure it appears above other content */
-    animation: run 10s linear infinite, float 3s ease-in-out infinite; /* Running and floating animation */
-  }
-  
-  /* Keyframes for running animation (horizontal movement) */
-  @keyframes run {
-    0% {
-      left: -150px; /* Start off the screen */
-    }
-    100% {
-      left: 100vw; /* Move to the right end of the viewport */
-    }
-  }
-  
-  /* Keyframes for floating animation (vertical movement) */
-  @keyframes float {
-    0% {
-      transform: translateY(0); /* No movement */
-    }
-    50% {
-      transform: translateY(-10px); /* Move slightly up */
-    }
-    100% {
-      transform: translateY(0); /* Move back down */
-    }
-  }
+  /* Header Style */
+
+  /* Language Switcher */
+#language-switcher, #mobile-language-switcher {
+  cursor: pointer;
+}
+
+#language-options, #mobile-language-options {
+  display: none;
+}
+
+#language-options li, #mobile-language-options li {
+  display: flex;
+  align-items: center;
+}
+
+#language-options li:hover, #mobile-language-options li:hover {
+  background-color: #f1f1f1;
+}
+
+.relative:hover #language-options, .relative:hover #mobile-language-options {
+  display: block;
+}
+
+/* Mobile Menu */
+#mobile-menu {
+  display: none;
+}
+
+#mobile-menu.show {
+  display: block;
+}
