@@ -1,79 +1,414 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mengthong's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles (if needed) */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Floating animation */
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>My Portfolio</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact Me</a></li>
-        <li><a href="#">Oeng Mengthong</a></li>
+  <!-- Header Section with Navigation -->
+  <header class="bg-blue-600 text-white sticky top-0 z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Logo or Name -->
+      <div>
+        <a href="#home" class="text-2xl font-bold hover:text-gray-300">Mengthong</a>
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav>
+        <ul id="menu" class="hidden md:flex space-x-6 text-lg">
+          <li><a href="#about" class="menu-item hover:text-gray-300">About Me</a></li>
+          <li><a href="#skills" class="menu-item hover:text-gray-300">Skills</a></li>
+          <li><a href="#projects" class="menu-item hover:text-gray-300">Projects</a></li>
+          <li><a href="#experience" class="menu-item hover:text-gray-300">Experience</a></li>
+          <li><a href="#freelance-services" class="menu-item hover:text-gray-300">Services</a></li>
+          <li><a href="#contact" class="menu-item hover:text-gray-300">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="focus:outline-none">
+          <svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden bg-blue-600 text-white md:hidden">
+      <ul class="flex flex-col space-y-4 py-4 px-6">
+        <li><a href="#about" class="menu-item hover:text-gray-300">About Me</a></li>
+        <li><a href="#skills" class="menu-item hover:text-gray-300">Skills</a></li>
+        <li><a href="#projects" class="menu-item hover:text-gray-300">Projects</a></li>
+        <li><a href="#experience" class="menu-item hover:text-gray-300">Experience</a></li>
+        <li><a href="#freelance-services" class="menu-item hover:text-gray-300">Services</a></li>
+        <li><a href="#contact" class="menu-item hover:text-gray-300">Contact</a></li>
       </ul>
     </nav>
   </header>
-  <h1 class="name">Welcome To My Web</h1>
-  <main>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hi there! I'm Oeng Mengthong, a passionate software developer with a strong interest in web technologies. My journey in coding began in [year], and since then, I've been constantly learning and expanding my skillset. My passion lies in creating innovative solutions and building user-friendly experiences.</p>
-    </section>
+  <!-- Hero Section -->
+  <section id="home" class="bg-blue-600 text-white py-32">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <!-- Left: Animated Image -->
+      <div class="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
+        <div class="animate-float">
+          <img src="profile.jpeg" alt="Animated Image"
+            class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-lg">
+        </div>
+      </div>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
+      <!-- Right: Info and Button -->
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h1 class="text-5xl font-bold">Hello, I'm Mengthong</h1>
+        <p class="mt-4 text-xl">Software Engineer | Flutter Expert | Full-Stack Developer</p>
+        <p class="mt-4 text-lg">I specialize in creating cutting-edge mobile and web applications that deliver seamless
+          user experiences.</p>
+        <a href="#contact" class="mt-8 px-6 py-3 bg-white text-blue-600 rounded hover:bg-gray-100 inline-block">Contact
+          Me</a>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Other sections follow (About, Skills, Projects, etc.) -->
+
+  <!-- About Me Section -->
+  <section id="about" class="py-16 px-8 bg-gray-100">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4">About Me</h2>
+      <p class="text-lg leading-relaxed">
+        Hello! I'm Mengthong, a passionate and versatile software engineer based in Phnom Penh, Cambodia. With several
+        years of experience in building high-performance applications, I specialize in a wide range of technologies,
+        including Flutter, NestJs, ExpressJs, Laravel, and more.
+      </p>
+      <p class="text-lg leading-relaxed mt-4">
+        My journey began with a deep curiosity for technology and how it shapes our everyday lives. From crafting sleek
+        mobile apps to developing robust backend systems, I love creating solutions that empower businesses and users
+        alike. I take pride in my ability to adapt to new challenges, constantly staying up-to-date with the latest tech
+        trends.
+      </p>
+      <p class="text-lg leading-relaxed mt-4">
+        In my professional career, I have had the pleasure of working on projects that range from mobile banking
+        applications to enterprise platforms. Some of the notable projects include <strong>Merchant KB Prasac
+          Mobile</strong>, <strong>Davane</strong>, and <strong>MakFood</strong>, each of which allowed me to grow and
+        refine my skills in full-stack development.
+      </p>
+      <p class="text-lg leading-relaxed mt-4">
+        When I'm not coding, I enjoy exploring new technology stacks, learning about blockchain, and thinking about
+        future innovations. I am also passionate about sharing my knowledge with the community and aspiring developers
+        through tutorials, blogs, and videos.
+      </p>
+      <p class="text-lg leading-relaxed mt-4">
+        I’m always looking for exciting projects to work on and love collaborating with teams that are equally driven to
+        push the boundaries of technology. Let's build something great together!
+      </p>
+    </div>
+  </section>
+
+  <!-- Freelance Services Section -->
+  <section id="freelance-services" class="py-16 px-8 bg-blue-50">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Freelance Services</h2>
+      <p class="text-lg leading-relaxed mb-8">
+        I offer a range of freelance services to help businesses scale and succeed. Whether you need mobile app
+        development, web solutions, or backend systems, I am here to deliver high-quality results that meet your needs.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="p-6 border rounded-lg bg-white shadow-lg">
+          <h3 class="text-xl font-bold mb-2">Mobile App Development</h3>
+          <p class="text-sm mb-4">
+            I create fast, responsive mobile apps with Flutter for Android and iOS. Let’s build a solution that enhances
+            your business operations and user experience.
+          </p>
+          <a href="#contact" class="text-blue-600 hover:underline">Get Started</a>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="p-6 border rounded-lg bg-white shadow-lg">
+          <h3 class="text-xl font-bold mb-2">Web Development</h3>
+          <p class="text-sm mb-4">
+            I offer full-stack web development services using NestJs, Laravel, and ExpressJs. From custom websites to
+            complex business solutions, I deliver exceptional results.
+          </p>
+          <a href="#contact" class="text-blue-600 hover:underline">Contact Me</a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="p-6 border rounded-lg bg-white shadow-lg">
+          <h3 class="text-xl font-bold mb-2">API & Backend Development</h3>
+          <p class="text-sm mb-4">
+            I develop secure and scalable APIs and backend systems using MongoDB, MySQL, Firebase, and more, ensuring
+            your applications run smoothly.
+          </p>
+          <a href="#contact" class="text-blue-600 hover:underline">Let's Collaborate</a>
+        </div>
+      </div>
+
+      <p class="text-lg leading-relaxed mt-8">Get a Free 30-Minute Consultation! Let’s talk about how I can help your
+        business succeed.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 px-8">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Skills</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div class="p-4 border rounded">Flutter</div>
+        <div class="p-4 border rounded">NestJs</div>
+        <div class="p-4 border rounded">ExpressJs</div>
+        <div class="p-4 border rounded">Laravel</div>
+        <div class="p-4 border rounded">MongoDB</div>
+        <div class="p-4 border rounded">MySql/MariaDB</div>
+        <div class="p-4 border rounded">Firebase</div>
+        <div class="p-4 border rounded">Centos Server</div>
+        <div class="p-4 border rounded">GCP (Google Cloud Platform)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 px-8 bg-gray-100">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Freelancer Task Manager -->
+        <div class="border p-4 rounded hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">Freelancer Task Manager</h3>
+          <p class="text-sm">A project management tool for freelancers to manage tasks, projects, and collaboration.</p>
+          <a href="https://github.com/Flexii321/flex-worker-flutter" class="text-blue-600 hover:underline">View on
+            GitHub</a>
+        </div>
+        <!-- Medical Tourism Platform -->
+        <div class="border p-4 rounded hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">Medical Tourism Platform</h3>
+          <p class="text-sm">A platform for connecting patients with medical tourism services around the globe.</p>
+          <a href="https://github.com/yourgithubrepo" class="text-blue-600 hover:underline">View on GitHub</a>
+        </div>
+        <!-- CookBook App -->
+        <div class="border p-4 rounded hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">CookBook App</h3>
+          <p class="text-sm">A recipe management application with Laravel for the backend and Flutter for mobile
+            clients.</p>
+          <a href="https://github.com/yourgithubrepo" class="text-blue-600 hover:underline">View on GitHub</a>
+        </div>
+        <!-- Merchant KB Prasac Mobile -->
+        <div class="border p-4 rounded hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">Merchant KB Prasac Mobile</h3>
+          <p class="text-sm">A mobile application for merchants powered by KB Prasac.</p>
+        </div>
+        <!-- Davane -->
+        <div class="border p-4 rounded hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">Davane</h3>
+          <p class="text-sm">An enterprise platform developed to streamline business processes.</p>
+        </div>
+        <!-- MakFood -->
+        <div class="border p-4 rounded hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">MakFood</h3>
+          <p class="text-sm">An online food delivery and management system.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-16 px-8">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Experience</h2>
+      <ul class="space-y-4">
         <li>
-          <h3>E-commerce Website</h3>
-          <p>Developed an e-commerce website for a local business, showcasing their products and facilitating online purchases. The website featured secure payment gateways, product filtering options, and a user-friendly navigation structure.</p>
+          <strong>Software Engineer at Jaksmok (Xenorder)</strong> <br>
+          <span class="text-sm text-gray-600">Jan 2021 - Present</span>
+          <p class="mt-2 text-lg leading-relaxed">
+            At Jaksmok, I have been responsible for developing and maintaining robust systems for internal and external
+            clients. I’ve worked on diverse projects like Xenorder, where I implemented scalable back-end solutions
+            using NestJs, ExpressJs, and MongoDB. My role involves leading projects from concept to deployment while
+            ensuring efficient collaboration with the team.
+          </p>
         </li>
         <li>
-          <h3>Content Management System</h3>
-          <p>Built a content management system that allows users to easily add, edit, and publish content on a website. Features include user roles, content categorization, and version control.</p>
+          <strong>Freelance Developer at USmile</strong> <br>
+          <span class="text-sm text-gray-600">May 2022 - Present</span>
+          <p class="mt-2 text-lg leading-relaxed">
+            As a freelance developer, I contribute to USmile’s mobile and web projects, ensuring that the platforms run
+            seamlessly. My responsibilities include developing new features using Flutter and NestJs, and maintaining
+            the integrity of client-side applications for maximum performance.
+          </p>
         </li>
-        <!-- Add more project entries as needed -->
+        <li>
+          <strong>Medical Tourism Platform at Collabonet</strong> <br>
+          <span class="text-sm text-gray-600">2023 - Present</span>
+          <p class="mt-2 text-lg leading-relaxed">
+            I am leading the development of a medical tourism platform that connects patients with global healthcare
+            providers. Utilizing Flutter for both mobile and web applications, and ExpressJs for backend API
+            development, I oversee the entire lifecycle of the project from concept to launch.
+          </p>
+        </li>
+        <li>
+          <strong>Developer at Saat Tech</strong> <br>
+          <span class="text-sm text-gray-600">Aug 2022 - Present</span>
+          <p class="mt-2 text-lg leading-relaxed">
+            At Saat Tech, I have worked on various solutions, including Salt Business, using Laravel and MongoDB. I’m
+            involved in both full-stack development and system maintenance, improving overall business processes.
+          </p>
+        </li>
+        <li>
+          <strong>Merchant KB Prasac Mobile</strong> <br>
+          <span class="text-sm text-gray-600">2021</span>
+          <p class="mt-2 text-lg leading-relaxed">
+            Developed a mobile banking application for merchants at KB Prasac, incorporating secure transactions and
+            account management features. I utilized Flutter and Firebase for the mobile app development and provided
+            backend support using Laravel.
+          </p>
+        </li>
+        <li>
+          <strong>Davane Platform</strong> <br>
+          <span class="text-sm text-gray-600">2022</span>
+          <p class="mt-2 text-lg leading-relaxed">
+            Designed and implemented a business management platform called Davane, providing tools to streamline
+            operations and improve efficiency. This project involved full-stack development using Flutter and MongoDB.
+          </p>
+        </li>
+        <li>
+          <strong>MakFood</strong> <br>
+          <span class="text-sm text-gray-600">2022</span>
+          <p class="mt-2 text-lg leading-relaxed">
+            Created an online food delivery system for MakFood, enabling users to browse restaurants and order food
+            seamlessly. The application was developed with Laravel for the backend API and Flutter for the mobile app.
+          </p>
+        </li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Programming Languages: Python, Java, JavaScript</li>
-        <li>Web Technologies: HTML5, CSS3, Bootstrap</li>
-        <li>Database Management: MySQL, MongoDB</li>
-        <li>Version Control: Git, GitHub</li>
-        <!-- Add more skill entries as needed -->
-      </ul>
-    </section>
+  <!-- Availability Message Above Contact Section -->
+  <section id="availability" class="py-8 px-8 bg-white text-center">
+    <div class="container mx-auto">
+      <p class="text-lg leading-relaxed">
+        <strong>I'm currently available for new freelance projects!</strong> Whether it's mobile app development, web
+        design, or backend solutions, let's work together to bring your vision to life.
+      </p>
+      <br>
+      <a href="#contact" class="mt-4 px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700">Reach Out Today</a>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form action="submit.php" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <label for="message">Message:</label>
-        <textarea id="message" name="message"></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-8 bg-gray-100 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+      <p class="mb-4">I'd love to connect! You can reach me at <a href="mailto:youremail@example.com"
+          class="text-blue-600 hover:underline">youremail@example.com</a></p>
+      <p>Or follow me on social media:</p>
 
-  </main>
+      <div class="mt-8 flex justify-center space-x-4">
+        <a href="https://linkedin.com/in/oengmengthong" class="text-blue-600 hover:underline">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" alt="LinkedIn" class="h-8 w-8">
+        </a>
+        <a href="https://github.com/Flexii321" class="text-gray-800 hover:underline">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub" class="h-8 w-8">
+        </a>
+        <a href="https://twitter.com/yourusername" class="text-blue-400 hover:underline">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/twitter.svg" alt="Twitter" class="h-8 w-8">
+        </a>
+        <a href="https://youtube.com/channel/yourchannel" class="text-red-600 hover:underline">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/youtube.svg" alt="YouTube" class="h-8 w-8">
+        </a>
+        <a href="https://facebook.com/yourprofile" class="text-blue-600 hover:underline">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg" alt="Facebook" class="h-8 w-8">
+        </a>
+        <a href="https://t.me/yourtelegram" class="text-blue-500 hover:underline">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/telegram.svg" alt="Telegram" class="h-8 w-8">
+        </a>
+        <a href="https://wa.me/yourwhatsappphonenumber" class="text-green-500 hover:underline">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg" alt="WhatsApp" class="h-8 w-8">
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; My Portfolio 2023</p>
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-4 text-center">
+    <p>&copy; 2024 Mengthong's Portfolio. All rights reserved.</p>
   </footer>
 
 </body>
+
+<script>
+  // Mobile Menu Toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Scroll Spy
+  const sections = document.querySelectorAll("section");
+  const menuItems = document.querySelectorAll(".menu-item");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.6 // Adjust threshold to trigger at 60% of section visibility
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        menuItems.forEach(item => {
+          item.classList.remove("text-blue-200");
+          item.classList.remove("font-bold");
+        });
+
+        const activeMenu = document.querySelector(`a[href="#${entry.target.id}"]`);
+        activeMenu.classList.add("text-blue-200", "font-bold"); // Highlight the current section in the menu
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
 
 </html>
