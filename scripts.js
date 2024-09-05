@@ -70,27 +70,6 @@ document.querySelectorAll('#language-options li').forEach(item => {
   });
 });
 
-function updateLanguageSwitcher(language) {
-  const switcher = document.getElementById('language-switcher');
-  const flag = switcher.querySelector('img');
-  const text = switcher.querySelector('span');
-
-  switch (language) {
-    case 'en':
-      flag.src = 'assets/english.png';
-      text.textContent = 'English';
-      break;
-    case 'km':
-      flag.src = 'assets/khmer.png';
-      text.textContent = 'Khmer';
-      break;
-    case 'zh':
-      flag.src = 'assets/chinese.png';
-      text.textContent = 'Chinese';
-      break;
-  }
-}
-
 
 // Function to calculate years of experience
 function calculateExperience(startYear) {
@@ -104,6 +83,29 @@ document.getElementById("experience-years").textContent = experienceYears;
 
 
 // Header
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenu.classList.toggle('show');
+});
+
+document.querySelectorAll('#language-options li, #mobile-language-options li').forEach(item => {
+  item.addEventListener('click', function() {
+    const language = this.dataset.lang;
+    changeLanguage(language);
+    updateLanguageSwitcher(language);
+  });
+});
+
+
+function changeLanguage(language) {
+  // Load the language file or change the text content dynamically
+  // For simplicity, we'll just change the text content here
+  const elements = document.querySelectorAll('[data-lang]');
+  elements.forEach(element => {
+    element.textContent = translations[language][element.dataset.lang];
+  });
+}
 
 document.getElementById('menu-toggle').addEventListener('click', function() {
   const mobileMenu = document.getElementById('mobile-menu');
