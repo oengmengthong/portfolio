@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Mengthong's Portfolio">
+  <meta name="keywords" content="portfolio, software engineer, flutter, full-stack developer">
+  <meta name="author" content="Mengthong">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
   <title>Mengthong's Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
@@ -34,6 +39,37 @@
       100% {
         transform: translateY(0);
       }
+    }
+
+    .overflow-ellipsis {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    /* Floating Telegram Button */
+    .floating-telegram {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #0088cc;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      transition: transform 0.3s;
+    }
+
+    .floating-telegram img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .floating-telegram:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -89,7 +125,7 @@
       <!-- Left: Animated Image -->
       <div class="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
         <div class="animate-float">
-          <img src="profile.jpeg" alt="Animated Image"
+          <img src="assets/profile.jpeg" alt="Animated Image"
             class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-lg">
         </div>
       </div>
@@ -104,46 +140,61 @@
           Me</a>
       </div>
     </div>
-    
+
   </section>
 
   <!-- Other sections follow (About, Skills, Projects, etc.) -->
 
   <!-- About Me Section -->
   <section id="about" class="py-16 px-8 bg-gray-100">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-4">About Me</h2>
-      <p class="text-lg leading-relaxed">
-        Hello! I'm Mengthong, a passionate and versatile software engineer based in Phnom Penh, Cambodia. With several
-        years of experience in building high-performance applications, I specialize in a wide range of technologies,
-        including Flutter, NestJs, ExpressJs, Laravel, and more.
-      </p>
-      <p class="text-lg leading-relaxed mt-4">
-        My journey began with a deep curiosity for technology and how it shapes our everyday lives. From crafting sleek
-        mobile apps to developing robust backend systems, I love creating solutions that empower businesses and users
-        alike. I take pride in my ability to adapt to new challenges, constantly staying up-to-date with the latest tech
-        trends.
-      </p>
-      <p class="text-lg leading-relaxed mt-4">
-        In my professional career, I have had the pleasure of working on projects that range from mobile banking
-        applications to enterprise platforms. Some of the notable projects include <strong>Merchant KB Prasac
-          Mobile</strong>, <strong>Davane</strong>, and <strong>MakFood</strong>, each of which allowed me to grow and
-        refine my skills in full-stack development.
-      </p>
-      <p class="text-lg leading-relaxed mt-4">
-        When I'm not coding, I enjoy exploring new technology stacks, learning about blockchain, and thinking about
-        future innovations. I am also passionate about sharing my knowledge with the community and aspiring developers
-        through tutorials, blogs, and videos.
-      </p>
-      <p class="text-lg leading-relaxed mt-4">
-        I’m always looking for exciting projects to work on and love collaborating with teams that are equally driven to
-        push the boundaries of technology. Let's build something great together!
-      </p>
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+      <div class="md:w-1/3 mb-8 md:mb-0">
+        <img src="assets/desktop.jpeg" alt="Profile Picture" class="rounded-full shadow-lg w-64 h-64 mx-auto md:mx-0">
+      </div>
+      <div class="md:w-2/3 md:pl-12">
+        <h2 class="text-4xl font-bold mb-4">About Me</h2>
+        <p class="text-lg leading-relaxed mb-4">
+          Hello! I'm <strong>Mengthong</strong>, a passionate and versatile software engineer based in Phnom Penh,
+          Cambodia. With several years of experience in building high-performance applications, I specialize in a wide
+          range of technologies, including <strong>Flutter</strong>, <strong>NestJs</strong>,
+          <strong>ExpressJs</strong>, <strong>Laravel</strong>, and more.
+        </p>
+        <div class="mb-4">
+          <h3 class="text-2xl font-semibold mb-2">My Journey</h3>
+          <p class="text-lg leading-relaxed">
+            My journey began with a deep curiosity for technology and how it shapes our everyday lives. From crafting
+            sleek mobile apps to developing robust backend systems, I love creating solutions that empower businesses
+            and users alike. I take pride in my ability to adapt to new challenges, constantly staying up-to-date with
+            the latest tech trends.
+          </p>
+        </div>
+        <div class="mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Professional Experience</h3>
+          <p class="text-lg leading-relaxed">
+            In my professional career, I have had the pleasure of working on projects that range from mobile banking
+            applications to enterprise platforms. Some of the notable projects include <strong>Merchant KB Prasac
+              Mobile</strong>, <strong>Davane</strong>, and <strong>MakFood</strong>, each of which allowed me to grow
+            and refine my skills in full-stack development.
+          </p>
+        </div>
+        <div class="mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Interests</h3>
+          <p class="text-lg leading-relaxed">
+            When I'm not coding, I enjoy exploring new technology stacks, learning about blockchain, and thinking about
+            future innovations. I am also passionate about sharing my knowledge with the community and aspiring
+            developers through tutorials, blogs, and videos.
+          </p>
+        </div>
+        <p class="text-lg leading-relaxed">
+          I’m always looking for exciting projects to work on and love collaborating with teams that are equally driven
+          to push the boundaries of technology. Let's build something great together!
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Freelance Services Section -->
-  <section id="freelance-services" class="py-16 px-8 bg-blue-50">
+  <section id="freelance-services" class="py-16 px-8 bg-white">
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">Freelance Services</h2>
       <p class="text-lg leading-relaxed mb-8">
@@ -154,6 +205,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Service 1 -->
         <div class="p-6 border rounded-lg bg-white shadow-lg">
+          <img src="assets/mobile.png" alt="Mobile App Development Icon" class="mx-auto mb-4 w-12 h-12">
           <h3 class="text-xl font-bold mb-2">Mobile App Development</h3>
           <p class="text-sm mb-4">
             I create fast, responsive mobile apps with Flutter for Android and iOS. Let’s build a solution that enhances
@@ -164,6 +216,7 @@
 
         <!-- Service 2 -->
         <div class="p-6 border rounded-lg bg-white shadow-lg">
+          <img src="assets/web.png" alt="Web Development Icon" class="mx-auto mb-4 w-12 h-12">
           <h3 class="text-xl font-bold mb-2">Web Development</h3>
           <p class="text-sm mb-4">
             I offer full-stack web development services using NestJs, Laravel, and ExpressJs. From custom websites to
@@ -174,6 +227,7 @@
 
         <!-- Service 3 -->
         <div class="p-6 border rounded-lg bg-white shadow-lg">
+          <img src="assets/database.png" alt="API & Backend Development Icon" class="mx-auto mb-4 w-12 h-12">
           <h3 class="text-xl font-bold mb-2">API & Backend Development</h3>
           <p class="text-sm mb-4">
             I develop secure and scalable APIs and backend systems using MongoDB, MySQL, Firebase, and more, ensuring
@@ -189,25 +243,52 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-16 px-8">
+  <section id="skills" class="py-16 px-8 bg-gray-100">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-4">Skills</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div class="p-4 border rounded">Flutter</div>
-        <div class="p-4 border rounded">NestJs</div>
-        <div class="p-4 border rounded">ExpressJs</div>
-        <div class="p-4 border rounded">Laravel</div>
-        <div class="p-4 border rounded">MongoDB</div>
-        <div class="p-4 border rounded">MySql/MariaDB</div>
-        <div class="p-4 border rounded">Firebase</div>
-        <div class="p-4 border rounded">Centos Server</div>
-        <div class="p-4 border rounded">GCP (Google Cloud Platform)</div>
+        <div class="p-4 border rounded flex items-center bg-white">
+          <img src="assets/flutter.png" alt="Flutter Icon" class="w-6 h-6 mr-2">
+          Flutter
+        </div>
+        <div class="p-4 border rounded flex items-center bg-white">
+          <img src="assets/nestjs.png" alt="NestJs Icon" class="w-6 h-6 mr-2">
+          NestJs
+        </div>
+        <div class="p-4 border rounded flex items-center bg-white">
+          <img src="assets/expressjs.png" alt="ExpressJs Icon" class="w-6 h-6 mr-2">
+          ExpressJs
+        </div>
+        <div class="p-4 border rounded flex items-center bg-white">
+          <img src="assets/laravel.png" alt="Laravel Icon" class="w-6 h-6 mr-2">
+          Laravel
+        </div>
+        <div class="p-4 border rounded flex items-center bg-white">
+          <img src="assets/mongodb.png" alt="MongoDB Icon" class="w-6 h-6 mr-2">
+          MongoDB
+        </div>
+        <div class="p-4 border rounded flex items-center bg-white">
+          <img src="assets/mysql.png" alt="MySql/MariaDB Icon" class="w-6 h-6 mr-2">
+          MySql/MariaDB
+        </div>
+        <div class="p-4 border rounded flex items-center bg-white">
+          <img src="assets/firebase.png" alt="Firebase Icon" class="w-6 h-6 mr-2">
+          Firebase
+        </div>
+        <div class="p-4 border rounded flex items-center bg-white">
+          <img src="assets/linux.png" alt="Server Icon" class="w-6 h-6 mr-2">
+          Linux Server
+        </div>
+        <div class="p-4 border rounded flex items-center bg-white">
+          <img src="assets/gcp.png" alt="GCP Icon" class="w-6 h-6 mr-2">
+          GCP (Google Cloud Platform)
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-16 px-8 bg-gray-100">
+  <section id="projects" class="py-16 px-8 bg-white">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-4">Projects</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -251,74 +332,131 @@
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="py-16 px-8">
+  <section id="experience" class="py-16 px-8 bg-gray-100">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-4">Experience</h2>
-      <ul class="space-y-4">
-        <li>
-          <strong>Software Engineer at Jaksmok (Xenorder)</strong> <br>
-          <span class="text-sm text-gray-600">Jan 2021 - Present</span>
-          <p class="mt-2 text-lg leading-relaxed">
+      <h2 class="text-3xl font-bold mb-8 text-center">Experience</h2>
+      <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
+        <!-- Experience 1 -->
+        <div class="p-6 border rounded-lg bg-white shadow-lg flex flex-col">
+          <div class="flex items-center mb-4">
+            <img src="assets/jaksmok.png" alt="Jaksmok Logo" class="w-16 h-16 mr-4">
+            <div>
+              <h3 class="text-xl font-bold mb-2">Software Engineer at Jaksmok (Xenorder)</h3>
+              <span class="text-sm text-gray-600">Jan 2021 - Present</span>
+            </div>
+          </div>
+          <p class="mt-2 text-lg leading-relaxed overflow-hidden overflow-ellipsis" id="exp1">
             At Jaksmok, I have been responsible for developing and maintaining robust systems for internal and external
             clients. I’ve worked on diverse projects like Xenorder, where I implemented scalable back-end solutions
             using NestJs, ExpressJs, and MongoDB. My role involves leading projects from concept to deployment while
             ensuring efficient collaboration with the team.
           </p>
-        </li>
-        <li>
-          <strong>Freelance Developer at USmile</strong> <br>
-          <span class="text-sm text-gray-600">May 2022 - Present</span>
-          <p class="mt-2 text-lg leading-relaxed">
+          <button class="text-blue-600 hover:underline mt-auto" onclick="toggleText('exp1')">Read More</button>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="p-6 border rounded-lg bg-white shadow-lg flex flex-col">
+          <div class="flex items-center mb-4">
+            <img src="assets/usmile.png" alt="USmile Logo" class="w-16 h-16 mr-4">
+            <div>
+              <h3 class="text-xl font-bold mb-2">Freelance Developer at USmile</h3>
+              <span class="text-sm text-gray-600">May 2022 - Present</span>
+            </div>
+          </div>
+          <p class="mt-2 text-lg leading-relaxed overflow-hidden overflow-ellipsis" id="exp2">
             As a freelance developer, I contribute to USmile’s mobile and web projects, ensuring that the platforms run
             seamlessly. My responsibilities include developing new features using Flutter and NestJs, and maintaining
             the integrity of client-side applications for maximum performance.
           </p>
-        </li>
-        <li>
-          <strong>Medical Tourism Platform at Collabonet</strong> <br>
-          <span class="text-sm text-gray-600">2023 - Present</span>
-          <p class="mt-2 text-lg leading-relaxed">
+          <button class="text-blue-600 hover:underline mt-auto" onclick="toggleText('exp2')">Read More</button>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="p-6 border rounded-lg bg-white shadow-lg flex flex-col">
+          <div class="flex items-center mb-4">
+            <img src="assets/collabonet.png" alt="Collabonet Logo" class="w-16 h-16 mr-4">
+            <div>
+              <h3 class="text-xl font-bold mb-2">Medical Tourism Platform at Collabonet</h3>
+              <span class="text-sm text-gray-600">2023 - Present</span>
+            </div>
+          </div>
+          <p class="mt-2 text-lg leading-relaxed overflow-hidden overflow-ellipsis" id="exp3">
             I am leading the development of a medical tourism platform that connects patients with global healthcare
             providers. Utilizing Flutter for both mobile and web applications, and ExpressJs for backend API
             development, I oversee the entire lifecycle of the project from concept to launch.
           </p>
-        </li>
-        <li>
-          <strong>Developer at Saat Tech</strong> <br>
-          <span class="text-sm text-gray-600">Aug 2022 - Present</span>
-          <p class="mt-2 text-lg leading-relaxed">
+          <button class="text-blue-600 hover:underline mt-auto" onclick="toggleText('exp3')">Read More</button>
+        </div>
+
+        <!-- Experience 4 -->
+        <div class="p-6 border rounded-lg bg-white shadow-lg flex flex-col">
+          <div class="flex items-center mb-4">
+            <img src="assets/saattech.png" alt="Saat Tech Logo" class="w-16 h-16 mr-4">
+            <div>
+              <h3 class="text-xl font-bold mb-2">Developer at Saat Tech</h3>
+              <span class="text-sm text-gray-600">Aug 2022 - Present</span>
+            </div>
+          </div>
+          <p class="mt-2 text-lg leading-relaxed overflow-hidden overflow-ellipsis" id="exp4">
             At Saat Tech, I have worked on various solutions, including Salt Business, using Laravel and MongoDB. I’m
             involved in both full-stack development and system maintenance, improving overall business processes.
           </p>
-        </li>
-        <li>
-          <strong>Merchant KB Prasac Mobile</strong> <br>
-          <span class="text-sm text-gray-600">2021</span>
-          <p class="mt-2 text-lg leading-relaxed">
+          <button class="text-blue-600 hover:underline mt-auto" onclick="toggleText('exp4')">Read More</button>
+        </div>
+
+        <!-- Experience 5 -->
+        <div class="p-6 border rounded-lg bg-white shadow-lg flex flex-col">
+          <div class="flex items-center mb-4">
+            <img src="assets/kbprasac.png" alt="KB Prasac Logo" class="w-16 h-16 mr-4">
+            <div>
+              <h3 class="text-xl font-bold mb-2">Merchant KB Prasac Mobile</h3>
+              <span class="text-sm text-gray-600">2021</span>
+            </div>
+          </div>
+          <p class="mt-2 text-lg leading-relaxed overflow-hidden overflow-ellipsis" id="exp5">
             Developed a mobile banking application for merchants at KB Prasac, incorporating secure transactions and
             account management features. I utilized Flutter and Firebase for the mobile app development and provided
             backend support using Laravel.
           </p>
-        </li>
-        <li>
-          <strong>Davane Platform</strong> <br>
-          <span class="text-sm text-gray-600">2022</span>
-          <p class="mt-2 text-lg leading-relaxed">
+          <button class="text-blue-600 hover:underline mt-auto" onclick="toggleText('exp5')">Read More</button>
+        </div>
+
+        <!-- Experience 6 -->
+        <div class="p-6 border rounded-lg bg-white shadow-lg flex flex-col">
+          <div class="flex items-center mb-4">
+            <img src="assets/davane.png" alt="Davane Logo" class="w-16 h-16 mr-4">
+            <div>
+              <h3 class="text-xl font-bold mb-2">Davane Platform</h3>
+              <span class="text-sm text-gray-600">2022</span>
+            </div>
+          </div>
+          <p class="mt-2 text-lg leading-relaxed overflow-hidden overflow-ellipsis" id="exp6">
             Designed and implemented a business management platform called Davane, providing tools to streamline
             operations and improve efficiency. This project involved full-stack development using Flutter and MongoDB.
           </p>
-        </li>
-        <li>
-          <strong>MakFood</strong> <br>
-          <span class="text-sm text-gray-600">2022</span>
-          <p class="mt-2 text-lg leading-relaxed">
+          <button class="text-blue-600 hover:underline mt-auto" onclick="toggleText('exp6')">Read More</button>
+        </div>
+
+        <!-- Experience 7 -->
+        <div class="p-6 border rounded-lg bg-white shadow-lg flex flex-col">
+          <div class="flex items-center mb-4">
+            <img src="assets/makfood.png" alt="MakFood Logo" class="w-16 h-16 mr-4">
+            <div>
+              <h3 class="text-xl font-bold mb-2">MakFood</h3>
+              <span class="text-sm text-gray-600">2022</span>
+            </div>
+          </div>
+          <p class="mt-2 text-lg leading-relaxed overflow-hidden overflow-ellipsis" id="exp7">
             Created an online food delivery system for MakFood, enabling users to browse restaurants and order food
             seamlessly. The application was developed with Laravel for the backend API and Flutter for the mobile app.
           </p>
-        </li>
-      </ul>
+          <button class="text-blue-600 hover:underline mt-auto" onclick="toggleText('exp7')">Read More</button>
+        </div>
+
+      </div>
     </div>
   </section>
+
 
   <!-- Availability Message Above Contact Section -->
   <section id="availability" class="py-8 px-8 bg-white text-center">
@@ -336,8 +474,8 @@
   <section id="contact" class="py-16 px-8 bg-gray-100 text-center">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
-      <p class="mb-4">I'd love to connect! You can reach me at <a href="mailto:youremail@example.com"
-          class="text-blue-600 hover:underline">youremail@example.com</a></p>
+      <p class="mb-4">I'd love to connect! You can reach me at <a href="mailto:mengthongoenggl@gmail.com"
+          class="text-blue-600 hover:underline">mengthongoenggl@gmail.com</a></p>
       <p>Or follow me on social media:</p>
 
       <div class="mt-8 flex justify-center space-x-4">
@@ -356,7 +494,7 @@
         <a href="https://facebook.com/yourprofile" class="text-blue-600 hover:underline">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg" alt="Facebook" class="h-8 w-8">
         </a>
-        <a href="https://t.me/yourtelegram" class="text-blue-500 hover:underline">
+        <a href="https://t.me/@mengthong" class="text-blue-500 hover:underline">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/telegram.svg" alt="Telegram" class="h-8 w-8">
         </a>
         <a href="https://wa.me/yourwhatsappphonenumber" class="text-green-500 hover:underline">
@@ -370,6 +508,11 @@
   <footer class="bg-blue-600 text-white py-4 text-center">
     <p>&copy; 2024 Mengthong's Portfolio. All rights reserved.</p>
   </footer>
+
+  <!-- Floating Telegram Contact Button -->
+  <a href="https://t.me/mengthong" target="_blank" class="floating-telegram">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/telegram.svg" alt="Contact on Telegram">
+  </a>
 
 </body>
 
@@ -409,6 +552,17 @@
   sections.forEach(section => {
     observer.observe(section);
   });
+
+  function toggleText(id) {
+    const element = document.getElementById(id);
+    if (element.classList.contains('overflow-hidden')) {
+      element.classList.remove('overflow-hidden', 'overflow-ellipsis');
+      element.nextElementSibling.textContent = 'Read Less';
+    } else {
+      element.classList.add('overflow-hidden', 'overflow-ellipsis');
+      element.nextElementSibling.textContent = 'Read More';
+    }
+  }
 </script>
 
 </html>
