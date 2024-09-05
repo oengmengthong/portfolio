@@ -31,6 +31,27 @@
     text-overflow: ellipsis;
   }
 
+  #home {
+    position: relative;
+    background-image: url('/assets/background.jpg'); /* Ensure the path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    z-index: 1;
+  }
+  
+  #home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    z-index: -1;
+  }
+
   /* Floating Telegram Button */
   .floating-telegram {
     position: fixed;

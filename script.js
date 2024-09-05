@@ -77,15 +77,15 @@ function updateLanguageSwitcher(language) {
 
   switch (language) {
     case 'en':
-      flag.src = 'path/to/english-flag.png';
+      flag.src = 'assets/english.png';
       text.textContent = 'English';
       break;
     case 'km':
-      flag.src = 'path/to/khmer-flag.png';
+      flag.src = 'assets/khmer.png';
       text.textContent = 'Khmer';
       break;
     case 'zh':
-      flag.src = 'path/to/chinese-flag.png';
+      flag.src = 'assets/chinese.png';
       text.textContent = 'Chinese';
       break;
   }
